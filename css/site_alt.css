@@ -1,5 +1,5 @@
 .MainContent {
-    background-color: f0d78c;
+    background-color: #F0F8FF;
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 100px 500px 1fr;
@@ -7,10 +7,8 @@
 
 .GraphArea {
     grid-column: 2;
-    display: flex;
-
     grid-column-gap: 5px;
-    justify-content: center;
+    display: flex;
     align-items: flex-end;
 
 }
@@ -18,21 +16,31 @@
 .MainTitle {
     grid-column: 1 / span 3;
     grid-row-start: 1;
-    text-align: center;
-    background-color: #fcfafa;
-    color: #000;
-    filter: drop-shadow(5px 5px 5px 5px black);
+    font-size: 3rem;
+    padding: 20px;
+    background-color: #00688B;
+    color: white;
+    filter: drop-shadow(30px 10px 4px grey);
 }
 
 .BarChart {
     text-align: center;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    transition: filter, transform .5s;
 }
 
 .BarChart:nth-of-type(odd) {
     background-color: #64c4ed;
-    color: #efecec;
+    color: #F0F8FF;
 }
 
 .BarChart:nth-of-type(even) {
     background-color: #4f81c7;
+}
+
+.BarChart:hover {
+    transform: perspective(200px) translate3D(-.2em, -.2em, 2em);
+    filter: contrast(150%) drop-shadow(8px 8px 10px gray);
+
 }
