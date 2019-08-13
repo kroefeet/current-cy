@@ -1,7 +1,7 @@
 .MainContent {
     background-color: #F0F8FF;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 100px 500px 1fr;
 }
 
@@ -10,7 +10,6 @@
     grid-column-gap: 5px;
     display: flex;
     align-items: flex-end;
-
 }
 
 .MainTitle {
@@ -23,24 +22,24 @@
     filter: drop-shadow(30px 10px 4px grey);
 }
 
-.BarChart {
+.GraphArea--BarChart {
     text-align: center;
     font-size: 1.5rem;
     flex-grow: 1;
     transition: filter, transform .5s;
 }
 
-.BarChart:nth-of-type(odd) {
+.GraphArea--BarChart:nth-of-type(odd) {
     background-color: #64c4ed;
     color: #F0F8FF;
 }
 
-.BarChart:nth-of-type(even) {
+.GraphArea--BarChart:nth-of-type(even) {
     background-color: #4f81c7;
 }
 
-.BarChart:hover {
-    transform: perspective(200px) translate3D(-.2em, -.2em, 2em);
+.GraphArea--BarChart:hover {
+    transform: perspective(200px) translate3D(0em, -.2em, .5em);
     filter: contrast(150%) drop-shadow(8px 8px 10px gray);
 
 }

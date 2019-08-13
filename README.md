@@ -6,9 +6,8 @@ I will be creating a visual currency exchange graph that gets data from the exch
 
 The visualization will be done through bar charts
 
-Color Scheme from: https://colorhunt.co/palette/155006
-
-#f0d78c
-#fcfafa
+Color Scheme:
+#F0F8FF
+#00688B
 #64c4ed
 #4f81c7
