@@ -1,10 +1,28 @@
+:root {
+    --bg-color: #F0F8FF;
+    --lighter-color: #64c4ed;
+    --darker-color: #4f81c7;
+    --text-color: #F0F8FF;
+}
+
 .MainContent {
-    background-color: #F0F8FF;
+    background-color: var(--bg-color);
     display: grid;
     grid-template-columns: 1fr 8fr 1fr;
     grid-template-rows: 100px 500px 1fr;
+    border: 1px solid #00688B;
 }
-
+/* Title Bar styling */
+.MainTitle {
+    grid-column: 1 / span 3;
+    grid-row-start: 1;
+    font-size: 3rem;
+    padding: 20px;
+    background-color: #00688B;
+    color: var(--text-color);
+    filter: drop-shadow(30px 10px 4px grey);
+}
+/* Graph Area styling */
 .GraphArea {
     grid-column: 2;
     grid-column-gap: 5px;
@@ -12,34 +30,34 @@
     align-items: flex-end;
 }
 
-.MainTitle {
-    grid-column: 1 / span 3;
-    grid-row-start: 1;
-    font-size: 3rem;
-    padding: 20px;
-    background-color: #00688B;
-    color: white;
-    filter: drop-shadow(30px 10px 4px grey);
-}
-
-.GraphArea--BarChart {
+/* individual bars */
+.GraphArea--barChart {
     text-align: center;
     font-size: 1.5rem;
     flex-grow: 1;
     transition: filter, transform .5s;
 }
 
-.GraphArea--BarChart:nth-of-type(odd) {
-    background-color: #64c4ed;
-    color: #F0F8FF;
+.GraphArea--barChart:nth-of-type(odd) {
+    background-color: var(--lighter-color);
+    color: var(--text-color);
 }
 
-.GraphArea--BarChart:nth-of-type(even) {
-    background-color: #4f81c7;
+.GraphArea--barChart:nth-of-type(even) {
+    background-color: var(--darker-color);
+    color: var(--text-color);
 }
 
-.GraphArea--BarChart:hover {
+/* transition for hover and highligh */
+.GraphArea--barChart:hover {
     transform: perspective(200px) translate3D(0em, -.2em, .5em);
     filter: contrast(150%) drop-shadow(8px 8px 10px gray);
 
+}
+
+/* changing size of Title Bar text to account for wordwrap */
+@media screen and (max-width: 720px){
+    .MainTitle {
+        font-size: 2rem;
+    }
 }
